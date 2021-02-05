@@ -12,6 +12,7 @@ object Main extends App {
   }
 
   val conf = ConfigFactory.load()
+
   val databaseName = conf.getString("database")
   val system = ActorSystem("tenes")
   val mongoClient: MongoClient = MongoClient()

@@ -23,7 +23,6 @@ class ListBrands(persisterActor: ActorRef) {
     val doc = Jsoup.connect(s"${baseUrl}${listUrl}").get();
 
     val elements: Elements = doc.select(".category_brands-sub > a")
-    // doc.select("ul.brandlist_icons.cf > li > a.name")
 
     val x = elements.asScala.map { el =>
       val brand = Brand(
@@ -31,7 +30,6 @@ class ListBrands(persisterActor: ActorRef) {
         href = el.attr("href")
       )
       println(brand)
-      // persisterActor ! brand
       (persisterActor ? brand).mapTo[String]
     }
 

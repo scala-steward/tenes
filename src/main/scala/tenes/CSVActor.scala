@@ -101,7 +101,6 @@ class CSVActor(o: ActorRef) extends Actor {
       )
       val writer = CSVWriter.open(racquets98, append = true)
       val racquet = _r.r
-      // val name = Base64.getEncoder.encodeToString(racquet.name.getBytes(StandardCharsets.UTF_8))
       val name = racquet.name
       writer.writeRow(
         List(
