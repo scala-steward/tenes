@@ -20,3 +20,5 @@ kmeans_data.txt
 query.mongo
 
 .sbtopts
+
+project/metals.sbt

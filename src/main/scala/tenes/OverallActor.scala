@@ -1,13 +1,10 @@
 package tenes
 package actors
 
-import tenes.Converters._
-
-import akka.actor.{Actor, ActorLogging, Props}
+import akka.actor.{Actor, Props}
+import org.jsoup._
 
 import scala.collection.JavaConverters._
-
-import org.jsoup._
 
 object OverallActor {
   def props(): Props =

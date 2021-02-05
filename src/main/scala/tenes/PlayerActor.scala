@@ -1,18 +1,10 @@
 package tenes
 package actors
 
-import tenes.Converters._
-
-import org.jsoup._
-
+import akka.actor.{Actor, ActorRef, Props}
 import com.typesafe.config.ConfigFactory
-
-import akka.actor.ActorRef
-
-import akka.actor.{Actor, ActorLogging, Props}
-
+import org.jsoup._
 import org.mongodb.scala._
-import org.mongodb.scala.bson.collection.immutable.Document
 
 object PlayerActor {
   val conf = ConfigFactory.load()
@@ -23,8 +15,8 @@ object PlayerActor {
 }
 
 class PlayerActor(database: MongoDatabase, o: ActorRef) extends Actor {
-  import PlayerActor._
   import PersisterActor._
+  import PlayerActor._
 
   def receive: Actor.Receive = {
     case s: String =>

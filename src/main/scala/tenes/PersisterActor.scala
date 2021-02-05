@@ -1,14 +1,10 @@
 package tenes
 package actors
 
-import tenes.Converters._
-
-import akka.actor.ActorRef
-
-import akka.actor.{Actor, ActorLogging, Props}
-
+import akka.actor.{Actor, ActorRef, Props}
 import org.mongodb.scala._
 import org.mongodb.scala.bson.collection.immutable.Document
+import tenes.Converters._
 
 object PersisterActor {
   def props(database: MongoDatabase, o: ActorRef): Props =

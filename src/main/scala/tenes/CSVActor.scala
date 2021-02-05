@@ -1,13 +1,9 @@
 package tenes
 package actors
 
-import tenes.Converters._
-
-import akka.actor.ActorRef
-
-import akka.actor.{Actor, ActorLogging, Props}
-
 import java.io.File
+
+import akka.actor.{Actor, ActorRef, Props}
 import com.github.tototoshi.csv._
 
 object CSVActor {
@@ -17,7 +13,6 @@ object CSVActor {
 
 class CSVActor(o: ActorRef) extends Actor {
   import PersisterActor._
-  import CSVActor._
   val brands = new File("brands.csv")
 
   val racquets = new File("racquets.csv")
@@ -32,8 +27,8 @@ class CSVActor(o: ActorRef) extends Actor {
 
   val playersRacquets = new File("players-racquets.csv")
 
-  import java.util.Base64
   import java.nio.charset.StandardCharsets
+  import java.util.Base64
 
   def receive: Actor.Receive = {
     case brand: Brand =>

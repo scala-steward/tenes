@@ -1,16 +1,13 @@
 package tenes
 
-import org.jsoup._
-
 import akka.actor.ActorRef
+import org.jsoup._
 
 class RacquetDetails(p: ActorRef, racquetUrl: String) {
 
   val doc = Jsoup.connect(racquetUrl).get();
 
   val name = doc.select("h1.name").text()
-
-  import scala.collection.JavaConverters._
 
   var weight: Float = 0
   var stiffness = 0

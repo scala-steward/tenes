@@ -1,12 +1,11 @@
 package tenes
 
-import scala.collection.JavaConverters._
-
+import akka.actor.ActorRef
+import com.typesafe.config.ConfigFactory
 import org.jsoup._
 import org.jsoup.select.Elements
 
-import akka.actor.ActorRef
-import com.typesafe.config.ConfigFactory
+import scala.collection.JavaConverters._
 
 class Players(p: ActorRef) {
   val conf = ConfigFactory.load()

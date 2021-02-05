@@ -1,13 +1,10 @@
 package tenes
 
-import scala.collection.JavaConverters._
-
+import akka.actor.ActorRef
 import org.jsoup._
-
 import org.mongodb.scala._
 
-import akka.actor.ActorRef
-import akka.actor.PoisonPill
+import scala.collection.JavaConverters._
 
 class ListRacquets(p: ActorRef, database: MongoDatabase) {
 

@@ -1,10 +1,9 @@
 package tenes.preprocessing
 
-import tenes._
-
-import org.mongodb.scala._
-import org.bson.{BsonString, BsonInt32, BsonDouble, Document}
 import com.typesafe.config.ConfigFactory
+import org.bson.Document
+import org.mongodb.scala._
+import tenes._
 
 object Preprocessing {
 
@@ -15,8 +14,6 @@ object Preprocessing {
       length: Double,
       beam: Int
   )
-
-  import scala.util.{Failure, Success}
   val conf = ConfigFactory.load()
   val databaseName = conf.getString("database")
 
@@ -69,8 +66,6 @@ object Preprocessing {
 
     Norm(h1 - h2, w1 - w2, s1 - s2, l1 - l2, b1 - b2)
   }
-
-  import org.mongodb.scala.bson.BsonTransformer._
 
   private[this] def doc2Racquet(doc: Document): Racquet = {
     val n = doc.getString("name")

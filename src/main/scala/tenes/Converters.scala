@@ -1,8 +1,7 @@
 package tenes
 
 import org.mongodb.scala._
-
-import actors.PersisterActor._
+import tenes.actors.PersisterActor._
 
 object Converters {
 

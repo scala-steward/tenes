@@ -1,12 +1,10 @@
 package tenes
 
-import org.mongodb.scala._
 import com.github.tototoshi.csv._
 import com.typesafe.config.ConfigFactory
+import org.mongodb.scala._
 
 object Exporter {
-
-  import scala.collection.JavaConverters._
   val conf = ConfigFactory.load()
   val databaseName = conf.getString("database")
 
