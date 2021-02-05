@@ -1,1 +1,1 @@
-https://github.com/mfirry/tenes/workflows/Scala%20CI/badge.svg
+[Scala CI](https://github.com/mfirry/tenes/workflows/Scala%20CI/badge.svg)
