@@ -16,14 +16,13 @@ object OverallActor {
 class OverallActor() extends Actor {
   import OverallActor._
 
-  def receive: Actor.Receive = {
-    case r: Review =>
-      val doc = Jsoup.connect(r.fullUrl).get()
+  def receive: Actor.Receive = { case r: Review =>
+    val doc = Jsoup.connect(r.fullUrl).get()
 
-      val els = doc.select(".total_score.fr")
+    val els = doc.select(".total_score.fr")
 
-      els.asScala.foreach { el =>
-        sender() ! tenes.actors.PersisterActor.Review(r.name, el.text().toInt)
-      }
+    els.asScala.foreach { el =>
+      sender() ! tenes.actors.PersisterActor.Review(r.name, el.text().toInt)
+    }
   }
 }

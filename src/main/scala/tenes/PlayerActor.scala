@@ -18,12 +18,11 @@ class PlayerActor(database: MongoDatabase, o: ActorRef) extends Actor {
   import PersisterActor._
   import PlayerActor._
 
-  def receive: Actor.Receive = {
-    case s: String =>
-      val doc = Jsoup.connect(s"${playerUrl}${s}").get()
-      val e = doc.select(".product_wrapper.rac > a > img")
-      val ex = e.attr("alt")
-      println(s"$s => $ex")
-      o ! PlayerR(s, ex)
+  def receive: Actor.Receive = { case s: String =>
+    val doc = Jsoup.connect(s"${playerUrl}${s}").get()
+    val e = doc.select(".product_wrapper.rac > a > img")
+    val ex = e.attr("alt")
+    println(s"$s => $ex")
+    o ! PlayerR(s, ex)
   }
 }
