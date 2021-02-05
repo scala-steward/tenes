@@ -13,6 +13,8 @@ import scala.concurrent.duration._
 
 import com.typesafe.config.ConfigFactory
 
+import language.postfixOps
+
 class ListBrands(persisterActor: ActorRef) {
   val conf = ConfigFactory.load()
 
