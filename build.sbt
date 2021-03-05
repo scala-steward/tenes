@@ -12,7 +12,7 @@ lazy val root = (project in file("."))
     name := "tenes",
     libraryDependencies ++= Seq(
       "org.jsoup" % "jsoup" % "1.13.1",
-      "com.github.tototoshi" %% "scala-csv" % "1.3.6",
+      "com.github.tototoshi" %% "scala-csv" % "1.3.7",
       "org.mongodb.scala" %% "mongo-scala-driver" % "4.1.1",
       "com.typesafe.akka" %% "akka-actor" % "2.6.12"
     )
